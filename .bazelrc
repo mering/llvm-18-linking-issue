@@ -1,0 +1,6 @@
+# Always use the pre-configured toolchain.
+build --repo_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1
+build --action_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1
+
+# NOTE The linker error disappears when commenting out the next line
+build --define absl=1
