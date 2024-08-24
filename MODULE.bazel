@@ -17,8 +17,8 @@ llvm.sysroot(
 use_repo(llvm, "llvm_toolchain")
 register_toolchains("@llvm_toolchain//:all")
 
-# error: 20240116.2, compiles: 20240722.0
 bazel_dep(name = "abseil-cpp", version = "20240116.2", repo_name = "com_google_absl")
-# error: 1.14.0.bcr.1, compiles: 1.15.2
-bazel_dep(name = "googletest", version = "1.14.0.bcr.1", repo_name = "com_google_googletest")
-
+local_path_override(
+    module_name = "abseil-cpp",
+    path = "./abseil-cpp/",
+)
